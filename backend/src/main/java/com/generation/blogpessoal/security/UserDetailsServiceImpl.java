@@ -15,17 +15,17 @@ import java.util.Optional;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired
-    private UsuarioRespository usuarioRespository;
+	@Autowired
+	private UsuarioRespository usuarioRepository;
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	@Override
+	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
-        Optional<Usuario> usuario = usuarioRespository.findByUsuario(username);
+		Optional<Usuario> usuario = usuarioRepository.findByUsuario(userName);
 
-        if (usuario.isPresent())
-            return new UserDetailsImpl(usuario.get());
-        else
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
-    }
+		if (usuario.isPresent())
+			return new UserDetailsImpl(usuario.get());
+		else
+			throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+	}
 }

@@ -9,7 +9,7 @@ import jakarta.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_usurios")
+@Table(name = "tb_usuarios")
 public class Usuario {
 
     @Id
