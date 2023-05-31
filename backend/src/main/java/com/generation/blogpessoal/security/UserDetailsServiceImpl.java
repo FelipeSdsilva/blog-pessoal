@@ -1,7 +1,7 @@
 package com.generation.blogpessoal.security;
 
 import com.generation.blogpessoal.model.Usuario;
-import com.generation.blogpessoal.repositories.UsuarioRespository;
+import com.generation.blogpessoal.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +16,7 @@ import java.util.Optional;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-	private UsuarioRespository usuarioRepository;
+	private UsuarioRepository usuarioRepository;
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {

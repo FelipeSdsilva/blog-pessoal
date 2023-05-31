@@ -2,7 +2,7 @@ package com.generation.blogpessoal.controllers;
 
 import com.generation.blogpessoal.model.Usuario;
 import com.generation.blogpessoal.model.UsuarioLogin;
-import com.generation.blogpessoal.repositories.UsuarioRespository;
+import com.generation.blogpessoal.repositories.UsuarioRepository;
 import com.generation.blogpessoal.services.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +22,16 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @Autowired
-    private UsuarioRespository usuarioRespository;
+    private UsuarioRepository usuarioRepository;
 
     @GetMapping("/all")
     public ResponseEntity<List<Usuario>> getAll() {
-        return ResponseEntity.ok(usuarioRespository.findAll());
+        return ResponseEntity.ok(usuarioRepository.findAll());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> getById(@PathVariable Long id) {
-        return usuarioRespository.findById(id)
+        return usuarioRepository.findById(id)
                 .map(resp -> ResponseEntity.ok(resp))
                 .orElse(ResponseEntity.notFound().build());
     }

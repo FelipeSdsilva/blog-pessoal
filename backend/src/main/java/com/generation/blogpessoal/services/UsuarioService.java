@@ -2,7 +2,7 @@ package com.generation.blogpessoal.services;
 
 import com.generation.blogpessoal.model.Usuario;
 import com.generation.blogpessoal.model.UsuarioLogin;
-import com.generation.blogpessoal.repositories.UsuarioRespository;
+import com.generation.blogpessoal.repositories.UsuarioRepository;
 import com.generation.blogpessoal.security.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +19,7 @@ import java.util.Optional;
 public class UsuarioService {
 
 	@Autowired
-	private UsuarioRespository usuarioRepository;
+	private UsuarioRepository usuarioRepository;
 
 	@Autowired
 	private JwtService jwtService;
