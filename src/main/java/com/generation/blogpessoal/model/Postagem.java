@@ -30,6 +30,7 @@ public class Postagem {
 
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
+	@JsonIgnore
 	private Tema tema;
 
 	@ManyToOne
