@@ -1,5 +1,6 @@
 package com.generation.blogpessoal.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -33,6 +34,7 @@ public class Postagem {
 
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
+	@JsonIgnore
 	private Usuario usuario;
 
 	public Long getId() {
