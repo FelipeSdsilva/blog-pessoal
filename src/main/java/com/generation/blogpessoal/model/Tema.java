@@ -20,7 +20,7 @@ public class Tema {
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
-	private List<Postagem> postagens = new ArrayList<>();
+	private List<Postagem> postagens;
 
 	public Long getId() {
 		return id;
